@@ -1,29 +1,24 @@
-### Recuperar todas las peliculas
-GET http://localhost:3000/movies
-
-### Recuperar una pelicula por su id
-GET http://localhost:3000/movies/5ebe9236-5ee2-4a8b-902d-3b1aa52516af
-### Recuperar peliculas por genero
-GET http://localhost:3000/movies?genre=Thriller
-
-### Añadir nueva pelicula
-POST http://localhost:3000/movies
+### Agregar nuevo usuario:
+POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "title": "The Matrix2",
-  "year": 1999,
-  "director": "The Wachowskis",
-  "poster": "https://example.com/matrix-poster.webp",
-  "genre": ["Action", "Sci-Fi", "Comedy"],
-  "rate": 8.7,
-  "duration": 1
+  "name": "Luisa Fernandez",
+  "age": 35,
+  "email": "luisa.fernandez@example.com",
+  "city": "Lima",
+  "password": "micontraseña",
+  "role": "Admin"
 }
 
-### Modificar una pelicula
-PATCH http://localhost:3000/movies/5ebe9236-5ee2-4a8b-902d-3b1aa52516af
+### Modificar un recurso
+PATCH http://localhost:3000/users/e36c5250-24e1-11df-8778-0019b9312238
 Content-Type: application/json
 
 {
-  "rate": 4
+  "email": "a@gmail.com"
 }
+
+### Borrar un usuario
+DELETE http://localhost:3000/users/e36c5250-24e1-11df-8778-0019b9312238
+
