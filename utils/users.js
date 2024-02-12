@@ -1,18 +1,26 @@
-import { users } from '../users.js'
+import { createRequire } from "module";
+import { readDb } from "./db.js";
+
+const require = createRequire(import.meta.url);
+const users = require("../users.json");
 
 const exportUsers = async () => {
-  return users
-}
+  const users = await readDb();
+  return users;
+};
 
 const findUserById = async (id) => {
-  const users = await exportUsers()
-  console.log(users)
-  return users.find((user) => user.id === id)
-}
+  const users = await exportUsers();
+  return users.find((user) => user.id === id);
+};
 
 const findIndexUser = async (id) => {
-  const users = await exportUsers()
-  return users.findIndex((user) => user.id === id)
-}
+  const users = await exportUsers();
+  const user = users.findIndex((user) => {
+    return user.id === id;
+  });
 
-export { exportUsers, findUserById, findIndexUser }
+  return user;
+};
+
+export { exportUsers, findUserById, findIndexUser };

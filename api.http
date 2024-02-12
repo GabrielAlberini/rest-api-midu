@@ -12,11 +12,11 @@ Content-Type: application/json
 }
 
 ### Modificar un recurso
-PATCH http://localhost:3000/users/e36c5250-24e1-11df-8778-0019b9312238
+PATCH http://localhost:3000/users/c74d97f0-24e1-11df-8924-0019b9312238
 Content-Type: application/json
 
 {
-  "email": "a@gmail.com"
+  "role": "Test"
 }
 
 ### Borrar un usuario
